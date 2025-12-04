@@ -34,10 +34,11 @@ fn joltage(batteries: &[char]) -> Box<[usize]> {
     println!("Step {:?}", batteries);
     println!("From {}", create_string(batteries, &selected));
 
+    // if the added character is bigger than the first selected charact a bigger number can be created
     if batteries[0] >= batteries[selected[0]] {
         // Swap the first element with the smallest element
-        let mut smallest = 0;
 
+        let mut smallest = 0;
         for i in 1..BATTERY_COUNT {
             if batteries[selected[i]] < batteries[selected[smallest]] {
                 smallest = i;
